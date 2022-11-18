@@ -23,7 +23,7 @@ A BUSZ header contains the following elements in order:
 | text | Plain text header | char[tlen] |  |
 | block_size | Number of rows in each block | uint32_t | |
 | pfd_block_size* | Size of a NewPFD block | uint32_t | |
-| lossy_umi** | True iff a lossy compression was used on UMIs | bool | |
+| lossy_umi** | Indicate whether a lossy compression was used on UMIs | uint32_t | |
 
 *The equivalence classes are compressed using the NewPFD compression scheme. It subdivides the input into blocks of `pfd_block_size`.
 
@@ -52,7 +52,6 @@ The header contains the following elements in order:
 | Field name| Description  | Type | Value |
 |------------|-------------|------|-------|
 | magic |fixed magic string|char[4]| BZI\0|
-|is_ascii| Whether the index is in ASCII | bool | |
 | n_blocks| Number of compressed blocks in the BUSZ file| uint64_t | |
 | block_size| The block_size in the corresponding BUSZ header | uint64_t | |
 | last_block_size| The number of BUS records in the last non-empty block | uint64_t | |
